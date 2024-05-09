@@ -15,7 +15,7 @@ class About extends Component {
                 </div>
                 <div className='section-about-content'>
                     <div className='content-left'>
-                        <iframe width="100%" height="400px" src="https://www.youtube.com/embed/jk7LbXUpmz0" title="STREAM ĐẾN BAO GIỜ - ĐỘ MIXI ft. BẠN SÁNG TÁC | OFFICIAL MUSIC VIDEO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="100%" height="400px" src="https://www.youtube.com/embed/jk7LbXUpmz0" title="STREAM ĐẾN BAO GIỜ - ĐỘ MIXI ft. BẠN SÁNG TÁC | OFFICIAL MUSIC VIDEO" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                     </div>
                     <div className='content-right'>
                         <p>aafgfgffffffff</p>
