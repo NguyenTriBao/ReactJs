@@ -1,20 +1,36 @@
+import { getAllCodeService } from '../../services/userService';
 import actionTypes from './actionTypes';
 
-export const adminLoginSuccess = (adminInfo) => ({
-    type: actionTypes.ADMIN_LOGIN_SUCCESS,
-    adminInfo: adminInfo
+// export const fetchGenderStart = () => ({
+//     type: actionTypes.FETCH_GENDER_START
+// })
+
+export const fetchGenderStart = () => {
+    return async(dispatch, getState) => {
+        try {
+            let res = await getAllCodeService("GENDER");
+            if(res && res.errCode === 0){
+                dispatch(fetchGenderSuccess(res.data))
+            }
+            else{
+                dispatch(fetchGenderFailed())
+            }
+        } catch (e) {
+            dispatch(fetchGenderFailed())
+            console.log('fetchGenderStart error', e)
+        }
+    }
+    
+}
+
+export const fetchGenderSuccess = (genderData) => ({
+    type: actionTypes.FETCH_GENDER_SUCCESS,
+    data: genderData
 })
 
-export const adminLoginFail = () => ({
-    type: actionTypes.ADMIN_LOGIN_FAIL
+export const fetchGenderFailed = () => ({
+    type: actionTypes.FETCH_GENDER_FAILED
 })
-
-export const processLogout = () => ({
-    type: actionTypes.PROCESS_LOGOUT
-})
+//start doing end
 
 
-export const userLoginSuccess = (userInfo) => ({
-    type: actionTypes.user_LOGIN_SUCCESS,
-    userInfo: userInfo
-})
