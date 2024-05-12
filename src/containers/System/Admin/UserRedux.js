@@ -4,10 +4,12 @@ import { connect } from 'react-redux';
 import { Label } from 'reactstrap';
 import { getAllCodeService } from '../../../services/userService';
 import { LANGUAGES } from '../../../utils/constant';
-import * as actions from "../../../store/actions"
-import './UserRedux.scss'
+import * as actions from "../../../store/actions";
+import './UserRedux.scss';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
+import TableManageUser from './TableManageUser';
+
 
 class UserRedux extends Component {
 
@@ -18,7 +20,7 @@ class UserRedux extends Component {
             positionArr: [],
             roleArr: [],
             previewImgURL: '',
-            isOpen: false,
+            isOpen: false, 
 
             email: '',
             password: '',
@@ -62,6 +64,23 @@ class UserRedux extends Component {
             })
         }
 
+        if (preProps.listUsers !== this.props.listUsers){
+            this.setState({
+                ...this.state,
+
+                email: '',
+                password: '',
+                firstName: '',
+                lastName: '',
+                phoneNumber: '',
+                address: '',
+                gender: '',
+                position: '',
+                role: '',
+                avatar: '',
+            })
+        }
+
     }
     handleOnchageImage = (event) => {
         let data = event.target.files;
@@ -82,10 +101,9 @@ class UserRedux extends Component {
         })
     }
 
-    handleSaveUser = () => {
+    handleSaveUser =  () => {
         let isValid = this.checkValidateInput()
         if (isValid == false) return;
-
         //fire redux action
         this.props.createNewUser({
             email: this.state.email,
@@ -97,10 +115,7 @@ class UserRedux extends Component {
             gender: this.state.gender,
             roleId: this.state.role,
             positionId: this.state.position
-    })
-
-        console.log('check state before save', this.state)
-
+        })
     }
 
     checkValidateInput = () => {
@@ -246,7 +261,6 @@ class UserRedux extends Component {
                                         onClick={() => { this.openPreviewImage() }}
                                     >
                                     </div>
-
                                 </div>
                             </div>
                             <div className='col-12 mt-3'>
@@ -254,12 +268,17 @@ class UserRedux extends Component {
                                     onClick={() => this.handleSaveUser()}
                                 ><FormattedMessage id="manage-user.save" /></button>
                             </div>
-
+                            <div className='col-12 mb-5'>
+                            <TableManageUser/>
+                            </div>
                         </div>
                     </div>
-
-
                 </div>
+
+
+
+
+
                 {this.state.isOpen === true &&
                     <Lightbox
                         mainSrc={this.state.previewImgURL}
@@ -279,6 +298,7 @@ const mapStateToProps = state => {
         positionRedux: state.admin.positions,
         roleRedux: state.admin.roles,
         isLoadingGender: state.admin.isLoadingGender,
+        listUsers: state.admin.users,
     };
 };
 
@@ -288,6 +308,9 @@ const mapDispatchToProps = dispatch => {
         getPositionStart: () => dispatch(actions.fetchPositionStart()),
         getRoleStart: () => dispatch(actions.fetchRoleStart()),
         createNewUser: (data) => dispatch(actions.createNewUser(data)),
+        fetchUserRedux: () => dispatch(actions.fetchAllUserStart()),
+
+
         //processLogout: () => dispatch(actions.processLogout()),
         //changeLanguageAppRedux: (language) => dispatch(actions.changeLanguageApp(language))
 
