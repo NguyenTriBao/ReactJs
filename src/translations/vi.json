@@ -61,7 +61,8 @@
         "position":"Vị trí",
         "image":"Ảnh đại diện",
         "role":"Vai trò",
-        "save":"Lưu",
-        "upload-image":"Tải ảnh"
+        "save":"Lưu user",
+        "upload-image":"Tải ảnh",
+        "edit": "Lưu thay đổi"
     }
 }
