@@ -65,5 +65,12 @@
         "save": "Save user",
         "upload-image":"Upload-image",
         "edit": "Edit user"
-        }
+    },
+    "homepage": {
+        "outstanding-doctor": "Outstanding Doctor of the Week",
+        "more-infor": "More Info"
+    }
+    
+
+    
 }

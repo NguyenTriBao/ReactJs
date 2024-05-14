@@ -31,7 +31,7 @@ class TableManageUser extends Component {
     }
     render() {
         // console.log('check userRedux: ', this.props.listUsers)
-        console.log('check state:', this.state.userRedux)
+        //console.log('check state:', this.state.userRedux)
         let arrUsers = this.state.userRedux
         return (
             <table id='TableManageUser'>

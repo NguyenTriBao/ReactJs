@@ -28,6 +28,9 @@
           background: #eceaea !important;
       }
   }
+  .slick-disabled {
+    display: none !important;
+  }
 
   .slick-prev::before,
   .slick-next::before {
@@ -75,7 +78,7 @@
                       border-radius: 50%;
                       width: 120px;
                       height: 120px;
-                      background-image: url(../../assets/outstanding-doctor/152704logo-bvcr-moi.jpeg);
+                      //background-image: url(../../assets/outstanding-doctor/152704logo-bvcr-moi.jpeg);
                   }
 
                   &.section-hanbook {
