@@ -342,9 +342,6 @@ class UserRedux extends Component {
                 </div>
 
 
-
-
-
                 {this.state.isOpen === true &&
                     <Lightbox
                         mainSrc={this.state.previewImgURL}
