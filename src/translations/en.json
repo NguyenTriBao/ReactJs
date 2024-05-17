@@ -9,7 +9,7 @@
         "fee": "Examination package",
         "check-health": "General health check-up",
         "support": "Support",
-        "welcome":"Welcome, "
+        "welcome": "Welcome, "
     },
     "banner": {
         "title1": "HEALTHCARE PLATFORM",
@@ -20,7 +20,7 @@
         "child4": "Medical testing",
         "child5": "Mental health",
         "child6": "Dental examination"
-        },
+    },
     "menu": {
         "system": {
             "header": "System",
@@ -34,7 +34,6 @@
                 "header": "System-parameter"
             }
         },
-
         "admin": {
             "user": "Users",
             "manage-user": "Users System",
@@ -48,7 +47,10 @@
             "manage-specialty": "Manage specialties",
             "handbook": "Handbook",
             "manage-handbook": "Manage handbooks"
-            }
+        },
+        "doctor": {
+            "manage-schedule": "Manage Doctor's schedule"
+        }
     },
     "manage-user": {
         "add": "Add New User",
@@ -63,14 +65,11 @@
         "image": "Avatar",
         "role": "Role",
         "save": "Save user",
-        "upload-image":"Upload-image",
+        "upload-image": "Upload-image",
         "edit": "Edit user"
     },
     "homepage": {
         "outstanding-doctor": "Outstanding Doctor of the Week",
         "more-infor": "More Info"
     }
-    
-
-    
 }
