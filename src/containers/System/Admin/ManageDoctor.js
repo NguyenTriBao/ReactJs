@@ -3,13 +3,12 @@ import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import './TableManageUser.scss';
 import * as actions from "../../../store/actions";
-import { LANGUAGES, CRUD_ACTIONS, CommonUtils } from '../../../utils';
+import { LANGUAGES, CRUD_ACTIONS } from '../../../utils';
 import MarkdownIt from 'markdown-it';
 import MdEditor from 'react-markdown-editor-lite';
 import 'react-markdown-editor-lite/lib/index.css'
 import './ManageDoctor.scss';
 import Select from 'react-select'
-import { flatMap, get, result } from 'lodash';
 import { getDetailInforDoctor } from '../../../services/userService';
 
 const options = [
