@@ -10,18 +10,27 @@
 
     .pick-hour-container {
         padding-top   : 20px;
-        border   : 1px solid red;
         gap      : 20px;
         flex-wrap: wrap;
 
         button{
             padding: 5px 15px;
-            border: 1px solid red;
+            border: 1px solid #ddd ;
+            margin-right: 15px;
         }
 
     }
+
+    .btn-schedule {
+
+        &.active{
+            background: orange;
+        }
+    }
     .btn-save-schedule{
         margin-top: 20px;
+
     }
+
 
 }
