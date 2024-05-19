@@ -11,7 +11,7 @@ import Login from './Auth/Login';
 import System from '../routes/System';
 import { CustomToastCloseButton } from '../components/CustomToast';
 import HomePage from './HomePage/HomePage.js'
-import DetailDoctor from './HomePage/Patient/Doctor/DetailDoctor.js';
+import DetailDoctor from './Patient/Doctor/DetailDoctor.js';
 import CustomScrollbars from '../components/CustomScrollbars.js';
 import Doctor from '../routes/Doctor.js';
 class App extends Component {
