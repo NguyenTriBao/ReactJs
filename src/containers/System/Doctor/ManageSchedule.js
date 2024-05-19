@@ -10,6 +10,7 @@ import moment from 'moment';
 import FormattedDate from '../../../components/Formating/FormattedDate';
 import _ from 'lodash';
 import { toast } from 'react-toastify';
+import { saveBulkScheduleDoctor } from '../../../services/userService';
 
 class ManageSchedule extends Component {
     constructor(props) {
@@ -93,7 +94,7 @@ class ManageSchedule extends Component {
             })
         } 
     }
-    handleSaveSchedule = () => {
+    handleSaveSchedule = async () => {
        let {rangeTime , selectedDoctor, currentDate} = this.state;
        let result = []
         if(!currentDate){
@@ -104,15 +105,18 @@ class ManageSchedule extends Component {
             toast.error("Invalid selected doctor! ")
             return;
         }
-        let formattedDate = moment(currentDate).format(dateFormat.SEND_TO_SERVER);
+        //let formattedDate = moment(currentDate).format(dateFormat.SEND_TO_SERVER);
+        //let formattedDate = moment(currentDate).unix();
+        let formattedDate = new Date(currentDate).getTime();
+        console.log("Check date: ",formattedDate);
         if(rangeTime.length > 0 && rangeTime){
             let selectedTime = rangeTime.filter(item => item.isSelected === true);
             if(selectedTime && selectedTime.length > 0){
                 selectedTime.map((schedule, index) => {
                     let object = {};
                     object.doctorId = selectedDoctor.value;
-                    object.data = formattedDate;
-                    object.time = schedule.keyMap
+                    object.date  = formattedDate;
+                    object.timeType = schedule.keyMap
                     result.push(object);
                 })     
             }
@@ -120,9 +124,13 @@ class ManageSchedule extends Component {
                 toast.error("Invalid selected time! ")
                 return;
             }
-            console.log(result);
         }
-     
+        let res = await saveBulkScheduleDoctor({
+             arrSchedule : result,
+             doctorId: selectedDoctor.value,
+             date: formattedDate
+        })
+        console.log("check result", res);
     }
     render() {
         let { rangeTime } = this.state
