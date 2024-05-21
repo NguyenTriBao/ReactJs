@@ -130,11 +130,17 @@ class ManageSchedule extends Component {
              doctorId: selectedDoctor.value,
              date: formattedDate
         })
-        console.log("check result", res);
+        if(res && res.errCode === 0){
+            toast.success("Save Infor succeed")
+        }else{
+            toast.error("Error saveBulkScheduleDoctor ")
+            console.log('saveBulkScheduleDoctor >>>> res: ',res)
+        }
     }
     render() {
         let { rangeTime } = this.state
         let { language } = this.props
+        let yesterday = new Date(new Date().setDate(new Date().getDate()-1));
        // console.log(rangeTime)
         return (
             <div className='manage-schedule-container'>
@@ -157,7 +163,7 @@ class ManageSchedule extends Component {
                             <DatePicker
                                 onChange={this.handleOnchangeDatePicker}
                                 value={this.state.currentDate[0]}
-                                minDate={new Date()}
+                                minDate={yesterday}
                                 className='form-control'
                             />
                         </div>
