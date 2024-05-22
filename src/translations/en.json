@@ -89,10 +89,16 @@
     "admin": {
         "manage-doctor": {
             "title": "Add Doctor Information",
-            "select-doctor": "Select Doctor:",
+            "select-doctor": "Select Doctor",
             "intro": "Introduction Information:",
             "add": "Add Information",
-            "save": "Save Information"
+            "save": "Save Information",
+            "price": "Consultation Fee",
+            "payment": "Payment Method",
+            "province": "Province",
+            "nameClinic": "Clinic Name",
+            "addressClinic": "Clinic Address",
+            "note": "Note"
         }
     }
 }
