@@ -84,6 +84,13 @@
             "no-schedule": "The doctor has no appointments available at this time, please choose another time.",
             "choose": "Chose",
             "book-free": "and book (free)"
+        },
+        "extra-infor-doctor": {
+            "text-address": "Clinic address",
+            "price": "Consultation fee: ",
+            "detail": "View details",
+            "payment": "Patients can pay using the following method: ",
+            "hide-price": "Hide price list"
         }
     },
     "admin": {

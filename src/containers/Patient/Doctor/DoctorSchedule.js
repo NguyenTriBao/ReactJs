@@ -25,10 +25,6 @@ class DoctorSchedule extends Component {
                 allDays: allDays,
             })
         }
-
-        console.log(allDays);
-
-
     }
     async componentDidUpdate(preProps, preState, snapshot) {
         if (this.props.language !== preProps.language) {
