@@ -91,6 +91,20 @@
             "detail": "View details",
             "payment": "Patients can pay using the following method: ",
             "hide-price": "Hide price list"
+        },
+        "booking-modal": {
+            "title": "Appointment booking information",
+            "fullName": "FullName",
+            "phoneNumber": "Phone number",
+            "email": "Email address",
+            "address": "Contact address",
+            "reason": "Reason for visit",
+            "birthday": "Date of birth",
+            "gender": "Gender",
+            "btnConfirm": "Confirm",
+            "btnCancel": "Cancel",
+            "priceBooking": "Free booking",
+            "price": "Consultation fee"
         }
     },
     "admin": {
