@@ -64,7 +64,7 @@ class ProfileDoctor extends Component {
         // console.log("check state: ", this.state)
         let { profileDoctor } = this.state;
         let { language, isShowDescriptionDoctor, dataTime } = this.props;
-        console.log(dataTime)
+        //console.log(dataTime)
         let nameVi = '', nameEn = '';
         if (profileDoctor && profileDoctor.positionData) {
             nameVi = `${profileDoctor.positionData.valueVi}, ${profileDoctor.lastName} ${profileDoctor.firstName}`;
