@@ -109,6 +109,11 @@
             "btnCancel":"Huỷ",
             "priceBooking":"Miễn phí đặt lịch",
             "price":"Giá khám"
+        },
+        "verify-email":{
+            "loading":"Đang tải....",
+            "success":"Xác nhận lịch hẹn thành công!",
+            "failed":"Lịch hẹn không tồn tại hoặc đã được xác nhận!"
         }
         
     },

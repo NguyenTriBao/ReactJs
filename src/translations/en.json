@@ -105,7 +105,13 @@
             "btnCancel": "Cancel",
             "priceBooking": "Free booking",
             "price": "Consultation fee"
+        },
+        "verify-email": {
+            "loading": "Loading data...",
+            "success": "Appointment confirmed successfully!",
+            "failed": "The appointment does not exist or has already been confirmed!"
         }
+        
     },
     "admin": {
         "manage-doctor": {
