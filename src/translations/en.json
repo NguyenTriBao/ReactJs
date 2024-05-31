@@ -70,7 +70,8 @@
     },
     "homepage": {
         "outstanding-doctor": "Outstanding Doctor of the Week",
-        "more-infor": "More Info"
+        "more-infor": "More Info",
+        "specialty-popular": "Popular Specialties"
     },
     "manage-schedule": {
         "title": "Manage Doctor's Appointment Schedule",
@@ -111,7 +112,6 @@
             "success": "Appointment confirmed successfully!",
             "failed": "The appointment does not exist or has already been confirmed!"
         }
-        
     },
     "admin": {
         "manage-doctor": {
@@ -125,7 +125,9 @@
             "province": "Province",
             "nameClinic": "Clinic Name",
             "addressClinic": "Clinic Address",
-            "note": "Note"
+            "note": "Note",
+            "specialty": "Select Specialty",
+            "clinic": "Select Clinic"
         }
     }
 }

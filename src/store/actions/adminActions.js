@@ -1,6 +1,6 @@
 import {
     getAllCodeService, addNewUserService, getAllUsers, deleteUserService, editUserService,
-    getTopDoctorHomeService, getAllDoctorsService, saveDetailDoctorService
+    getTopDoctorHomeService, getAllDoctorsService, saveDetailDoctorService, getAllSpecialtyService
 } from '../../services/userService';
 import actionTypes from './actionTypes';
 import { toast } from 'react-toastify';
@@ -36,9 +36,6 @@ export const fetchGenderSuccess = (genderData) => ({
 export const fetchGenderFailed = () => ({
     type: actionTypes.FETCH_GENDER_FAILDED
 })
-
-
-
 
 export const fetchPositionStart = () => {
     return async (dispatch, getState) => {
@@ -302,7 +299,7 @@ export const fetchAllScheduleTime = () => {
     return async (dispatch, getState) => {
         try {
             let res = await getAllCodeService('TIME');
-           
+
             if (res && res.errCode === 0) {
                 dispatch(fetchAllScheduleHourSuccess(res.data))
             }
@@ -315,7 +312,6 @@ export const fetchAllScheduleTime = () => {
         }
     }
 }
-
 
 export const fetchAllScheduleHourSuccess = (data) => ({
     type: actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_SUCCESS,
@@ -337,15 +333,18 @@ export const getRequiredDoctorInfor = () => {
             let resPrice = await getAllCodeService("PRICE");
             let resPayment = await getAllCodeService("PAYMENT");
             let resProvince = await getAllCodeService("PROVINCE");
-
+             let resSpecialty = await getAllSpecialtyService()
             if (resPrice && resPrice.errCode === 0
                 && resPayment && resPayment.errCode === 0
-                && resProvince && resProvince.errCode === 0) {
-                    let data = {
-                        resPrice:resPrice.data,
-                        resPayment:resPayment.data,
-                        resProvince:resProvince.data,
-                    }
+                && resProvince && resProvince.errCode === 0
+                && resSpecialty && resSpecialty.errCode === 0
+            ) {
+                let data = {
+                    resPrice: resPrice.data,
+                    resPayment: resPayment.data,
+                    resProvince: resProvince.data,
+                    resSpecialty:resSpecialty.data,
+                }
                 dispatch(fetchRequiredDoctorInforSuccess(data))
             }
             else {
