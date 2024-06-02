@@ -118,7 +118,6 @@ class BookingModal extends Component {
     }
 
     render() {
-        console.log(this.state)
         let { isOpenModal, closeBookingModal, dataTime, language } = this.props
         let doctorId = dataTime && !_.isEmpty(dataTime) ? dataTime.doctorId : '';
         let genders = this.state.genderArr;
@@ -139,6 +138,8 @@ class BookingModal extends Component {
                                 doctorId={doctorId}
                                 isShowDescriptionDoctor={false}
                                 dataTime={dataTime}
+                                isShowPrice={true}
+                                isShowLinkDetail={false}
                             />
                         </div>
                         <div className='price'>
