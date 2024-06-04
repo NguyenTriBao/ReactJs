@@ -2,19 +2,20 @@ import React, { Component, Fragment } from 'react';
 import { connect } from "react-redux";
 import { LANGUAGES, CommonUtils } from '../../../utils';
 import { FormattedMessage } from 'react-intl';
-import './ManageSpecialty.scss';
+import './ManageClinic.scss';
 import MarkdownIt from 'markdown-it';
 import MdEditor from 'react-markdown-editor-lite';
-import { createNewSpecialty } from '../../../services/userService';
+import { createNewClinic } from '../../../services/userService';
 import { toast } from 'react-toastify';
 
 const mdParser = new MarkdownIt();
-class ManageSpecialty extends Component {
+class ManageClinic extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
             name: '',
+            address: '',
             imageBase64: '',
             descriptionHTML: '',
             descriptionMarkdown: '',
@@ -54,10 +55,10 @@ class ManageSpecialty extends Component {
 
         }
     }
-    handleSaveNewSpecialty = async () => {
-        let res = await createNewSpecialty(this.state);
+    handleSaveNewClinic = async () => {
+        let res = await createNewClinic(this.state);
         if(res && res.errCode === 0){
-            toast.success('Save new specialty succeed!')
+            toast.success('Save new clinic succeed!')
             this.setState({
                 name: '',
                 imageBase64: '',
@@ -66,7 +67,7 @@ class ManageSpecialty extends Component {
             })
         }
         else{
-            toast.error('Save new specialty failed!')
+            toast.error('Save new clinic failed!')
         }
     }
     render() {
@@ -74,20 +75,26 @@ class ManageSpecialty extends Component {
         return (
             <div className='manage-specialty-container'>
                 <div className='ms-title'>
-                <FormattedMessage id="admin.manage-specialty.title"/>
+                    <FormattedMessage id="admin.manage-clinic.title"/>
                 </div>
 
                 <div className='add-new-specialty row'>
                     <div className='col-6 form-group'>
-                        <label><FormattedMessage id="admin.manage-specialty.name"/></label>
+                        <label> <FormattedMessage id="admin.manage-clinic.name"/></label>
                         <input className='form-control' type='text'
                             value={this.state.name}
                             onChange={(event) => this.handleOnChangeInput(event, 'name')} />
                     </div>
                     <div className='col-6 form-group'>
-                        <label><FormattedMessage id="admin.manage-specialty.image"/></label>
+                        <label> <FormattedMessage id="admin.manage-clinic.image"/></label>
                         <input className='form-control-file' type='file'
                             onChange={(event => this.handleOnchageImage(event))} />
+                    </div>
+                    <div className='col-6 form-group'>
+                        <label> <FormattedMessage id="admin.manage-clinic.address"/></label>
+                        <input className='form-control' type='text'
+                            value={this.state.address}
+                            onChange={(event) => this.handleOnChangeInput(event, 'address')} />
                     </div>
                     <div className='col-12'>
                         <MdEditor style={{ height: '300px' }} renderHTML={text => mdParser.render(text)}
@@ -97,8 +104,8 @@ class ManageSpecialty extends Component {
                     </div>
                     <div className='col-12'>
                         <button className='btn-save-specialty'
-                        onClick={()=>this.handleSaveNewSpecialty()}
-                        ><FormattedMessage id="admin.manage-specialty.save"/></button>
+                        onClick={()=>this.handleSaveNewClinic()}
+                        ><FormattedMessage id="admin.manage-clinic.save"/></button>
                     </div>
                 </div>
 
@@ -118,4 +125,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ManageSpecialty);
+export default connect(mapStateToProps, mapDispatchToProps)(ManageClinic);

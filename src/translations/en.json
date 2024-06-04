@@ -71,7 +71,9 @@
     "homepage": {
         "outstanding-doctor": "Outstanding Doctor of the Week",
         "more-infor": "More Info",
-        "specialty-popular": "Popular Specialties"
+        "specialty-popular": "Popular Specialties",
+        "medical-facility": "Featured Medical Facility"
+
     },
     "manage-schedule": {
         "title": "Manage Doctor's Appointment Schedule",
@@ -128,6 +130,20 @@
             "note": "Note",
             "specialty": "Select Specialty",
             "clinic": "Select Clinic"
+        },
+        "manage-specialty": {
+            "title": "Manage Specialty",
+            "name": "Specialty Name",
+            "image": "Specialty Image",
+            "save":"Save"
+        },
+        "manage-clinic": {
+            "title": "Manage Clinic",
+            "name": "Clinic Name",
+            "image": "Clinic Image",
+            "address": "Clinic Address",
+            "save":"Save"
         }
+        
     }
 }
