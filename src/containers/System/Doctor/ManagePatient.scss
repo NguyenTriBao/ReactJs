@@ -19,6 +19,20 @@
                 text-align: left;
                 
             }
+            button{
+                border: none;
+                outline: none;
+                cursor: pointer;
+                height: 30px;
+                border-radius: 3px;
+            }
+            .mp-btn-confirm{
+                margin-right: 10px;
+                background: orange;
+            }
+            .mp-btn-remedy{
+                background: green;
+            }
         }
     }
 }

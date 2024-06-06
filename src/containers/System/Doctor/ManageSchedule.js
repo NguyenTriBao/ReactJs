@@ -108,7 +108,7 @@ class ManageSchedule extends Component {
         //let formattedDate = moment(currentDate).format(dateFormat.SEND_TO_SERVER);
         //let formattedDate = moment(currentDate).unix();
         let formattedDate = new Date(currentDate).getTime();
-        console.log("Check date: ",formattedDate);
+       
         if(rangeTime.length > 0 && rangeTime){
             let selectedTime = rangeTime.filter(item => item.isSelected === true);
             if(selectedTime && selectedTime.length > 0){
