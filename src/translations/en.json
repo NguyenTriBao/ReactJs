@@ -50,7 +50,7 @@
         },
         "doctor": {
             "manage-schedule": "Manage Doctor's schedule",
-            "manage-patient":"Manage Patients's schedule"
+            "manage-patient": "Manage Patients's schedule"
         }
     },
     "manage-user": {
@@ -74,13 +74,22 @@
         "more-infor": "More Info",
         "specialty-popular": "Popular Specialties",
         "medical-facility": "Featured Medical Facility"
-
     },
     "manage-schedule": {
         "title": "Manage Doctor's Appointment Schedule",
         "choose-doctor": "Choose Doctor",
         "choose-date": "Choose Date",
         "save": "Save Information"
+    },
+    "manage-patient-doctor": {
+        "title": "Manage Patient Appointments",
+        "choose-date": "Choose Appointment Date",
+        "stt": "Serial Number",
+        "time": "Time",
+        "name": "Full Name",
+        "address": "Address",
+        "gender": "Gender",
+        "action": "Actions"
     },
     "patient": {
         "detail-doctor": {
@@ -136,15 +145,14 @@
             "title": "Manage Specialty",
             "name": "Specialty Name",
             "image": "Specialty Image",
-            "save":"Save"
+            "save": "Save"
         },
         "manage-clinic": {
             "title": "Manage Clinic",
             "name": "Clinic Name",
             "image": "Clinic Image",
             "address": "Clinic Address",
-            "save":"Save"
+            "save": "Save"
         }
-        
     }
 }

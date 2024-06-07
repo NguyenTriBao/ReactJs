@@ -82,6 +82,16 @@
         "choose-date": "Chọn ngày",
         "save": "Lưu thông tin"
     },
+    "manage-patient-doctor":{
+        "title":"Quản lý bệnh nhân khám bệnh",
+        "choose-date": "Chọn ngày khám",
+        "stt":"Số thứ tự",
+        "time":"Thời gian",
+        "name":"Họ và tên",
+        "address":"Địa chỉ",
+        "gender":"Giới tính",
+        "action":"Tính Năng"
+    },
     "patient": {
         "detail-doctor": {
             "schedule": "Lịch khám",
