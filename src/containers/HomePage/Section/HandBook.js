@@ -2,13 +2,33 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import Slider from "react-slick";
+import { getAllHandbook } from '../../../services/userService';
 
 
- 
 class HandBook extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            dataHandbook: [],
+        }
+    }
+    async componentDidMount() {
+        let res = await getAllHandbook();
+        if (res && res.errCode === 0) {
+            this.setState({
+                dataHandbook: res.data ? res.data : []
+            })
+        }
+    }
+    async componentDidUpdate(preProps, preState, snapshot) {
+        if (this.props.language !== preProps.language) {
 
+        }
+
+    }
 
     render() {
+        let { dataHandbook } = this.state
         return (
             <div className='section-share section-hanbook'>
                 <div className='section-container'>
@@ -18,35 +38,23 @@ class HandBook extends Component {
                     </div>
                     <div className='section-body'>
                         <Slider {...this.props.settings}>
-                            <div className='section-customize'>
-                                <div className='bg-image section-hanbook' />
-                                <div>Cơ xương khớp 1</div>
-                            </div>
-                            <div className='section-customize'>
-                                <div className='bg-image section-hanbook' />
-                                <div>Cơ xương khớp 2</div>
-                            </div>
-                            <div className='section-customize'>
-                                <div className='bg-image section-hanbook' />
-                                <div>Cơ xương khớp 3</div>
-                            </div>
-                            <div className='section-customize'>
-                                <div className='bg-image section-hanbook' />
-                                <div>Cơ xương khớp 4</div>
-                            </div>
-                            <div className='section-customize'>
-                                <div className='bg-image section-hanbook' />
-                                <div>Cơ xương khớp 5</div>
-                            </div>
-                            <div className='section-customize'>
-                                <div className='bg-image section-hanbook' />
-                                <div>Cơ xương khớp 6</div>
-                            </div>
-                        </Slider>
-                    </div>
-
-                </div>
+                            {dataHandbook && dataHandbook.length > 0 &&
+                                dataHandbook.map((item, index) => {
+                                    return (
+                                        <div className='section-customize handbook-child' key={index}
+                                        // onClick={() => this.handleViewDetailClinic(item)}
+                                        >
+                                            <div className='bg-image section-handbook'
+                                            style={{ backgroundImage: `url(${item.image})` }} />
+                                            <div className='handbook-title'>{item.title}</div>
+                                        </div>
+                                    )
+                            })}
+                </Slider>
             </div>
+
+                </div >
+            </div >
         );
     }
 
