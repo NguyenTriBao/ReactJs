@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import Slider from "react-slick";
 import { getAllHandbook } from '../../../services/userService';
-
+import { withRouter } from 'react-router-dom/cjs/react-router-dom.min';
+import './HandBook.scss'
 
 class HandBook extends Component {
     constructor(props) {
@@ -26,15 +27,17 @@ class HandBook extends Component {
         }
 
     }
-
+    handleViewDetailHandbook = (item) =>{
+        this.props.history.push(`/detail-handbook/${item.id}`);
+    }
     render() {
         let { dataHandbook } = this.state
         return (
             <div className='section-share section-hanbook'>
                 <div className='section-container'>
                     <div className='section-header'>
-                        <span className='title-section'>Cẩm nang</span>
-                        <button className='btn-section' >Xem thêm</button>
+                        <span className='title-section'><FormattedMessage id="homepage.handbook"/></span>
+                        <button className='btn-section' ><FormattedMessage id="homepage.more-infor"/></button>
                     </div>
                     <div className='section-body'>
                         <Slider {...this.props.settings}>
@@ -42,7 +45,7 @@ class HandBook extends Component {
                                 dataHandbook.map((item, index) => {
                                     return (
                                         <div className='section-customize handbook-child' key={index}
-                                        // onClick={() => this.handleViewDetailClinic(item)}
+                                        onClick={() => this.handleViewDetailHandbook(item)}
                                         >
                                             <div className='bg-image section-handbook'
                                             style={{ backgroundImage: `url(${item.image})` }} />
@@ -74,4 +77,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HandBook);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HandBook));

@@ -69,18 +69,22 @@ class ManageHandbook extends Component {
         return (
             <div className='manage-handbook-container'>
             <div className='ms-title'>
-            quản lý cẩm nang
+            <FormattedMessage id="admin.manage-handbook.manage-handbook"/>
             </div>
             <div className='add-new-handbook row'>
                 <div className='col-6 form-group'>
-                    <label>tiêu đề cẩm nang</label>
+                    <label>
+                    <FormattedMessage id="admin.manage-handbook.title"/>
+                    </label>
                     <input className='form-control' type='text'
                         value={this.state.name}
                         onChange={(event) => this.handleOnChangeInput(event, 'name')} 
                         />
                 </div>
                 <div className='col-6 form-group'>
-                        <label>Thêm hình ảnh</label>
+                        <label>
+                        <FormattedMessage id="admin.manage-handbook.image"/>
+                        </label>
                         <input className='form-control-file' type='file'
                             onChange={(event => this.handleOnchageImage(event))} />
                     </div>
